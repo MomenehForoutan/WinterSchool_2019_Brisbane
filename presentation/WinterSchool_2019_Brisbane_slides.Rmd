@@ -1,7 +1,7 @@
 ---
 title: "Generating dynamic reports using R Markdown in RStudio"
 subtitle: ""
-author: "Momeneh (Sepideh) Foroutan <br> @S_Foroutan <br>" 
+author: "Momeneh (Sepideh) Foroutan <br><br> @S_Foroutan <br><br>" 
 date: "2019-07-05"
 output:
   xaringan::moon_reader:
