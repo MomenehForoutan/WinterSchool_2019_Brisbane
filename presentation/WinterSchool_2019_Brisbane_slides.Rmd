@@ -1,9 +1,8 @@
 ---
 title: "Generating dynamic reports using R Markdown in RStudio"
 subtitle: ""
-author: "Momeneh (Sepideh) Foroutan"
-institute: "@S_Foroutan"
-date: "June 2019 (updated: `r format(Sys.time(), '%d %B, %Y')`)" 
+author: "Momeneh (Sepideh) Foroutan <br> @S_Foroutan <br>" 
+date: "2019-07-05"
 output:
   xaringan::moon_reader:
     css: ["default", "rladies", "rladies-fonts"]
@@ -25,7 +24,7 @@ options(htmltools.dir.version = FALSE)
 
 - PhD in Computational Cancer Biology
 
-- Self teaching R through on-line courses and forums
+- Self teaching R through on-line courses 
 
 --
 
