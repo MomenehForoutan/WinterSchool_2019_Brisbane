@@ -1,4 +1,5 @@
 # Generating dynamic reports using R Markdown in RStudio
-This presentation was generated using the xaringan package for my talk at the winter school 2019 in Brisbane, AU. 
-
-[WinterSchool_2019_Brisbane_presentation](http://127.0.0.1:4981/presentation/WinterSchool_2019_Brisbane_slides.html#1)
+This repository includes:
+- A presentation which was generated using the `xaringan` package for my talk at the winter school 2019 in Brisbane, AU. This is under /presentation folder.
+- An .Rmd and .html file as examples for generating reports in R. These can be found under /analysis folder.
+- The data that have been used in the R Markdown report.
