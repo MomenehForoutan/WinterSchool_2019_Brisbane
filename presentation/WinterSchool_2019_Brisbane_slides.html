@@ -26,26 +26,32 @@ class: center, middle, inverse, title-slide
 
 - Background in Molecular Genetics (BSc and MSc)
 
+- Self teaching R through on-line courses 
+
 - PhD in Computational Cancer Biology
 
-- Self teaching R through on-line courses 
 
 --
 
+- [R-Ladies](https://rladies.org): A world-wide organisation to promote gender diversity in the R community
+&lt;div class="figure"&gt;
+&lt;img src="./images/RLadies_map.png" alt="https://blog.revolutionanalytics.com/2018/12/women-and-r.html" width="70%" /&gt;
+&lt;p class="caption"&gt;https://blog.revolutionanalytics.com/2018/12/women-and-r.html&lt;/p&gt;
+&lt;/div&gt;
+
+---
+# About me and R
 - Co-founder of [R-Ladies Melbourne](https://www.meetup.com/R-Ladies-Melbourne/events/past/) in Sep 2016 
 
 - President of R-Ladies Melbourne Inc.
 
+- More than 1200 members
+
+- There are also chapters in Brisbane, Sydney, Canberra, and Perth
+
 &lt;div class="figure"&gt;
 &lt;img src="./images/RLadies_meetup.png" alt="https://www.meetup.com/en-AU/rladies-melbourne/" width="70%" /&gt;
 &lt;p class="caption"&gt;https://www.meetup.com/en-AU/rladies-melbourne/&lt;/p&gt;
-&lt;/div&gt;
-
----
-# R-Ladies 
-&lt;div class="figure"&gt;
-&lt;img src="./images/RLadies_map.png" alt="https://blog.revolutionanalytics.com/2018/12/women-and-r.html" width="100%" /&gt;
-&lt;p class="caption"&gt;https://blog.revolutionanalytics.com/2018/12/women-and-r.html&lt;/p&gt;
 &lt;/div&gt;
 
 ---
@@ -128,11 +134,6 @@ RStudio is an integrated development environment (IDE) for R which includes a co
 
 - [**RStudio cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)
 
----
-# Online courses
-
-[**Data Science Specialisation by JHU on Coursera**](https://www.coursera.org/specializations/jhu-data-science)
-
 
 ---
 # R Markdown and knitr
@@ -201,13 +202,6 @@ An [**R Notebook**](https://bookdown.org/yihui/rmarkdown/notebook.html#fig:noteb
 ]
 
 ---
-# How does it look when we knit?
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/Rendered_RMarkdown.png" alt="https://github.com/DavisLaboratory/NK_scoring/" width="90%" /&gt;
-&lt;p class="caption"&gt;https://github.com/DavisLaboratory/NK_scoring/&lt;/p&gt;
-&lt;/div&gt;
-
----
 class: inverse
 # Creating the document
 .pull-top[
@@ -222,6 +216,14 @@ class: inverse
 &lt;img src="./images/RMarkdown_example2.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
+
+---
+# How does it look when we knit?
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/Rendered_RMarkdown.png" alt="https://github.com/DavisLaboratory/NK_scoring/" width="90%" /&gt;
+&lt;p class="caption"&gt;https://github.com/DavisLaboratory/NK_scoring/&lt;/p&gt;
+&lt;/div&gt;
+
 ---
 # YAML header
 
@@ -235,6 +237,8 @@ By modifying the YAML header, we can add/change:
 - Global figure options (width and height)
 - Custom CSS
 - a lot more
+
+- [YAML and RMarkdown cheatsheet](https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/)
 
 ---
 # YAML header
@@ -284,11 +288,13 @@ By modifying the YAML header, we can add/change:
 ---
 # Structure and modify the text
 
-- Add hyperlinks using `[your_text](your_url)`; for example:
+- Add links using `[your_text](url)`; for example:
 
 `[R Markdown documnetation](https://rmarkdown.rstudio.com)` will make [R Markdown documnetation](https://rmarkdown.rstudio.com) clickable, which opens up the corresponding webpage for the documentation.
 
-- Use **single backticks** as wrappers to change the font to make the code, package names, etc different from other plain texts.
+- Use **single backticks** as wrappers for in-line codes.
+
+--
 
 - Add bullet points using **minus** and **plus** signs as well as tab.
 
@@ -408,7 +414,8 @@ Use samples' gene expression data and a gene set scoring method to score samples
 ]
 
 .pull-right[
-&lt;br&gt;
+
+ Singscore: gene-set scoring method
 - Rank-based method
 
 - Single-sample approach 
@@ -424,28 +431,28 @@ Use samples' gene expression data and a gene set scoring method to score samples
 &lt;img src="./images/singscore_workflow.png" width="91%" style="display: block; margin: auto;" /&gt;
 
 &lt;br&gt;
-&lt;small&gt;[Single sample scoring of molecular phenotypes. Foroutan M, Bhuva D, et al. *BMC Bioinformatics*](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2435-4)&lt;/small&gt;
+&lt;small&gt;[Single sample scoring of molecular phenotypes. Foroutan M, Bhuva D, et al. *BMC Bioinformatics*](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2435-4)
+
+[using singscore to predict mutations in acute myeloid leukemia from transcriptomic signatures. Bhuva D, et al. *f1000Research*](https://f1000research.com/articles/8-776)
+
+&lt;/small&gt;
+
 
 ---
-# Visualisations by `singscore`
+# Overview of data and signatures
 
+## Data sets
+- An example **gene expression data set** which includes gene expression values (n = 11900) for 10 samples, covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [this paper](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
+- TCGA breast cancer patients data 
 
-&lt;img src="./images/RankDensity.png" width="70%" style="display: block; margin: auto;" /&gt;
---
-&lt;img src="./images/ScoreDispersion.png" width="70%" style="display: block; margin: auto;" /&gt;
-&lt;small&gt;[Using singscore to predict mutations in AML from transcriptomic signatures. Bhuva D. et al. *f1000 research*](https://bioconductor.org/packages/release//workflows/vignettes/SingscoreAMLMutations/inst/doc/workflow_transcriptional_mut_sig.html).&lt;/small&gt;
+## Signatures
+**TGFb-EMT signature** from the [same paper](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf) (Both the data subset and the signature are available from the `singscore` R/Bioconductor package). 
 
----
-# Visualisations by `singscore`
-
-&lt;img src="./images/ScoreLandscape.png" width="50%" style="display: block; margin: auto;" /&gt;
-&lt;small&gt;[Using singscore to predict mutations in AML from transcriptomic signatures. Bhuva D. et al. *f1000 research*](https://bioconductor.org/packages/release//workflows/vignettes/SingscoreAMLMutations/inst/doc/workflow_transcriptional_mut_sig.html).&lt;/small&gt;
+**Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
 
 ---
 class: inverse, middle, center
 # Let's look at our R Markdown report 
-
-[**Generating dynamic reports in R Markdown - an example using singscore**](file:///Users/foroutanm/Documents/presentations/conferences/WinterSchool_2019_Brisbane/Slides/analysis/winterSchool_singscore.html)
 
 ---
 # Resources I used for this presentation
@@ -458,9 +465,33 @@ class: inverse, middle, center
 - [**RLadies presentation Ninja** by *Alison Presmanes Hill*](https://alison.rbind.io/slides/rladies-demo-slides.html)
 - [**Making slides in R Markdown** by *Alison Hill*](https://arm.rbind.io/slides/xaringan.html)
 
+
+---
+# Online courses
+
+[**Data Science Specialisation by JHU on Coursera**](https://www.coursera.org/specializations/jhu-data-science), which include courses on:
+* Tools needed for data analysis, e.g. R/RStudio, Git/Github, Markdown, etc.
+* Intro to R programming
+* Data cleaning
+* Data exploration
+* reproducibility
+* Statistical inference
+* Regression models
+* Machine learning
+* Shiny, R packages, and interactive reports
+
+[**Statistics and genomics courses by Harvard Uni on Edx**](https://www.edx.org/course?search_query=genomics+harvard+university), which are:
+* Statistics and R ,  Linear Models and Matrix Algebra, Statistical Inference, High-Dimensional Data Analysis, Introduction to Bioconductor, High-performance computing for reproducible genomics, and Case studies in functional genomics
+
+[**Statistics course by Stanford Uni**](https://online.stanford.edu/courses/stats216-introduction-statistical-learning)
+
 ---
 class: inverse, center, middle
-# Thank you!
+# Thank you! 
+
+---
+# Victorian Cancer Bioinformatics Symposium
+&lt;img src="./images/VCBS_flyer.jpg" width="50%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
