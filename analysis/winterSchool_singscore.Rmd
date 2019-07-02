@@ -44,13 +44,19 @@ The example data available through singscore package is called **tgfb_expr_10_se
 knitr::include_graphics("./images/SE.png")
 ```
 
+<br>
+
 Looking at the head of the expression data, we see that samples are in columns, and each row represents expression of a gene, with Entrez IDs as row names.
-```{r}
-datatable(assay(tgfb_expr_10_se)[1:5, 1:4])
+
+```{r, echo = TRUE}
+datatable(assay(tgfb_expr_10_se)[1:20, 1:4])
 ```
 
 
+<br>
+
 We would like to add more annotation file to the samples; we add these to the `colData` slot of the `tgfb_expr_10_se` object.
+
 ```{r}
 tgfb_expr_10_se@colData$Replicate[grepl("R1", rownames(tgfb_expr_10_se@colData))] <- "Replicate 1"
 tgfb_expr_10_se@colData$Replicate[grepl("R2", rownames(tgfb_expr_10_se@colData))] <- "Replicate 2"
@@ -60,10 +66,17 @@ tgfb_expr_10_se@colData$Study[grepl("Hes_", rownames(tgfb_expr_10_se@colData))] 
 tgfb_expr_10_se@colData$Study[grepl("Hil_", rownames(tgfb_expr_10_se@colData))] <- "Hill"
 ```
 
-We generate an **interactive table** using DT package.
+<br>
+
+We generate an interactive annotation table using DT package.
+
 ```{r}
 DT::datatable(data.frame(colData(tgfb_expr_10_se)), filter = "top")
 ```
+
+<br>
+
+We can modify the style of the table format pretty easily.
 
 ```{r}
 datatable(data.frame(colData(tgfb_expr_10_se))) %>%
@@ -118,7 +131,7 @@ plotDispersion(scoredf = sigScore_tgfb,
 ```
 
 ### Rank density plots
-```{r rank density plots, fig.height = 4, fig.width = 7}
+```{r rank density plots, fig.height = 5, fig.width = 7}
 plotRankDensity(
   rankData = rankedData[, "D_TGFb_R1", drop = F],
   upSet = tgfb_gs_up,
@@ -220,12 +233,13 @@ projectScoreLandscape(
 # Interactive plot independent of singscore 
 ## Using ggplotly
 You only need to pass a ggplot object to `ggplotly` to get the inteactivity. You could 
-```{r}
+```{r ggplotly, fig.height = 6, fig.width = 7}
+## p2 is a ggplot object
 ggplotly(p2)
 ```
 
 We can also project the cell line scores on top of it.
-```{r}
+```{r manually add projections, fig.height = 6, fig.width = 7}
 annot <- colData(tgfb_expr_10_se)$Treatment[1:4]
 annot_name <- "Group"
 sampleLabels <- colnames(rankedData)[1:4]

@@ -25,38 +25,47 @@ class: center, middle, inverse, title-slide
 # About me and R
 
 - Background in Molecular Genetics (BSc and MSc)
-
 - Self teaching R through on-line courses 
-
 - PhD in Computational Cancer Biology
 
 
 --
 
-- [R-Ladies](https://rladies.org): A world-wide organisation to promote gender diversity in the R community
-&lt;div class="figure"&gt;
-&lt;img src="./images/RLadies_map.png" alt="https://blog.revolutionanalytics.com/2018/12/women-and-r.html" width="70%" /&gt;
-&lt;p class="caption"&gt;https://blog.revolutionanalytics.com/2018/12/women-and-r.html&lt;/p&gt;
-&lt;/div&gt;
+- [R-Ladies](https://rladies.org): A world-wide organisation to promote gender diversity in the R community.
+&lt;br&gt; &lt;br&gt; &lt;br&gt;
+
+&lt;img src="./images/RLadies_logo.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 # About me and R
+
+- Background in Molecular Genetics (BSc and MSc)
+- Self teaching R through on-line courses 
+- PhD in Computational Cancer Biology
+&lt;br&gt;&lt;br&gt;
 - Co-founder of [R-Ladies Melbourne](https://www.meetup.com/R-Ladies-Melbourne/events/past/) in Sep 2016 
-
 - President of R-Ladies Melbourne Inc.
-
 - More than 1200 members
 
-- There are also chapters in Brisbane, Sydney, Canberra, and Perth
-
-&lt;div class="figure"&gt;
+&lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/RLadies_meetup.png" alt="https://www.meetup.com/en-AU/rladies-melbourne/" width="70%" /&gt;
 &lt;p class="caption"&gt;https://www.meetup.com/en-AU/rladies-melbourne/&lt;/p&gt;
 &lt;/div&gt;
 
 ---
+# R-Ladies chapters
+- There are 158 chapters in 46 countries.
+
+- Other chapters in Australia (**Brisbane**, Sydney, Adelaide, Canberra, and Perth.
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/RLadies_map.png" alt="https://blog.revolutionanalytics.com/2018/12/women-and-r.html" width="80%" /&gt;
+&lt;p class="caption"&gt;https://blog.revolutionanalytics.com/2018/12/women-and-r.html&lt;/p&gt;
+&lt;/div&gt;
+
+---
 class: inverse, center, middle
-# Motivation 
+# Why generating reports in R?
 
 ---
 # Imagine a project ...
@@ -132,7 +141,7 @@ RStudio is an integrated development environment (IDE) for R which includes a co
 
 - [**Introduction to R and RStudio**](http://ncss-tech.github.io/stats_for_soil_survey/chapters/1_introduction/1_introduction.html)
 
-- [**RStudio cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)
+- [**RStudio cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) as well as [**many cheatsheets**](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf) by RStudio.
 
 
 ---
@@ -141,17 +150,20 @@ RStudio is an integrated development environment (IDE) for R which includes a co
 R Markdown (.Rmd) combines **R codes** (.R) and **documentatiuon language** (.md) using **knitr**.
 
 **knitr** ...
-- inspired by Sweave
 - is an R package which works as an engine for dynamic report generation in R. 
+
+- inspired by Sweave (R code + LaTeX)
+
 - helps us to integrate R codes into other documents (e.g. Markdown, LaTeX, HTML, etc).
+
 - can generate HTML, PDF or Word documents.
+
 - supports other languages, such as Python, Perl, C++, Shell scripts, etc.
-- enables reproducible research
+
 
 ---
 # R Markdown main sections
-YAML header, Markdown text, and code chunks (with outputs).
-
+Main sections are YAML header, markdown text, and code chunks ([R Markdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)).
 &lt;img src="./images/RMarkdown_sections.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -178,8 +190,8 @@ YAML header, Markdown text, and code chunks (with outputs).
 # R Notebook
 
 An [**R Notebook**](https://bookdown.org/yihui/rmarkdown/notebook.html#fig:notebook-demo) is an R Markdown document with chunks that can be executed independently and interactively, with output visible immediately beneath the input.
-- **R Markdown** (knitr botton): executes and evaluates all code in one go. It can be very time-consuming when we have heavy processing
-- **R Notebook** (preview botton): has caching behaviour; it evaluates a code chunk and save it. 
+- **R Markdown**: executes and evaluates all code in one go. It can be very time-consuming when we have heavy processing
+- **R Notebook**: has caching behaviour; it evaluates a code chunk and save it. 
 
 "The immediacy of notebook mode makes it a good choice while authoring the R Markdown document and iterating on code. When you are ready to publish the document, you can share the notebook directly, or render it to a publication format with the Knit button."
 
@@ -205,11 +217,11 @@ An [**R Notebook**](https://bookdown.org/yihui/rmarkdown/notebook.html#fig:noteb
 class: inverse
 # Creating the document
 .pull-top[
-- Modify YAML header
-- Structure and format the text
-- Insert and modify code chuncks
-- Generate interactive tables
-- Generate interactive figures
+- YAML header
+- Text structure and format
+- Code chuncks
+- Interactive tables
+- Interactive figures
 ]
 .pull-bottom[
 
@@ -226,19 +238,17 @@ class: inverse
 
 ---
 # YAML header
+A YAML header is a set of key:value pairs at the start of the file, which starts and ends with a line of three dashes.
 
-"YAML (YAML Ain't Markup Language) is a human-friendly data serialization standard for all programming languages."
-
-YAML header allows us to modify the output of the domunent; YAML section can evaluate R expressions.
-By modifying the YAML header, we can add/change:
-- Output format
-- Table of content (toc)
-- Tabbed sections 
-- Global figure options (width and height)
-- Custom CSS
+The meta data in the YAML header allows us to modify the output of the domunent; we can add/change:
+- output format
+- table of content (toc)
+- tabbed sections 
+- global figure options (width and height)
+- custom CSS (Cascading Style Sheets)
 - a lot more
 
-- [YAML and RMarkdown cheatsheet](https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/)
+
 
 ---
 # YAML header
@@ -292,16 +302,16 @@ By modifying the YAML header, we can add/change:
 
 `[R Markdown documnetation](https://rmarkdown.rstudio.com)` will make [R Markdown documnetation](https://rmarkdown.rstudio.com) clickable, which opens up the corresponding webpage for the documentation.
 
-- Use **single backticks** as wrappers for in-line codes.
+- Use **single backticks** as wrappers for `in-line codes`.
 
 --
 
-- Add bullet points using **minus** and **plus** signs as well as tab.
+- Add bullet points using `*`, **-** or **+**
 
 .pull-left[
 For example:
 
-`-` First point
+`*` First point
 
 Tab `+` class A
 
@@ -314,7 +324,7 @@ Tab `+` class B
 .pull-right[
 Will result in:
 
-- First point
+* First point
   + class A
   + class B
 - Second point
@@ -322,8 +332,10 @@ Will result in:
 ]
 
 
+---
+# Code chunks
 
-
+&lt;img src="./images/code_chunks0.png" width="65%" style="display: block; margin: auto;" /&gt;
 
 ---
 # Code chunks
@@ -364,7 +376,11 @@ Will result in:
 
 .pull-right[
 &lt;img src="./images/code_chunks_bottons2.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+- In Mac: Command + Shift + Return
+- In Windows: Ctrl + Shift + Enter
 ]
+
 
 ---
 # Interactive tables using DT package
@@ -425,7 +441,7 @@ Use samples' gene expression data and a gene set scoring method to score samples
 - Interactive plots
 ]
 
-
+&lt;small&gt;[Single sample scoring of molecular phenotypes. Foroutan M, Bhuva D, et al. *BMC Bioinformatics*](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2435-4)&lt;/small&gt;
 ---
 # The singscore method
 &lt;img src="./images/singscore_workflow.png" width="91%" style="display: block; margin: auto;" /&gt;
@@ -433,7 +449,7 @@ Use samples' gene expression data and a gene set scoring method to score samples
 &lt;br&gt;
 &lt;small&gt;[Single sample scoring of molecular phenotypes. Foroutan M, Bhuva D, et al. *BMC Bioinformatics*](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2435-4)
 
-[using singscore to predict mutations in acute myeloid leukemia from transcriptomic signatures. Bhuva D, et al. *f1000Research*](https://f1000research.com/articles/8-776)
+[Using singscore to predict mutations in acute myeloid leukemia from transcriptomic signatures. Bhuva D, et al. *f1000Research*](https://f1000research.com/articles/8-776)
 
 &lt;/small&gt;
 
@@ -442,13 +458,13 @@ Use samples' gene expression data and a gene set scoring method to score samples
 # Overview of data and signatures
 
 ## Data sets
-- An example **gene expression data set** which includes gene expression values (n = 11900) for 10 samples, covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [this paper](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
+- An example **gene expression data set** which includes gene expression values (n = 11900) for 10 samples, covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
 - TCGA breast cancer patients data 
 
 ## Signatures
-**TGFb-EMT signature** from the [same paper](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf) (Both the data subset and the signature are available from the `singscore` R/Bioconductor package). 
+- **TGFb-EMT signature** from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf).
 
-**Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
+- **Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
 
 ---
 class: inverse, middle, center
@@ -461,10 +477,8 @@ class: inverse, middle, center
 - [**R Markdown documentation**](https://rmarkdown.rstudio.com)
 - [**R Notebook documentation**](https://bookdown.org/yihui/rmarkdown/notebook.html#fig:notebook-demo)
 - [**Baby one more time - Reproducibility in R and when to pull in the big guns** by *Lavinia Gordon*](https://mrslaviniag.github.io/xaringan_presentations/rladies_presentation_22_May_2019.html)
-
-- [**RLadies presentation Ninja** by *Alison Presmanes Hill*](https://alison.rbind.io/slides/rladies-demo-slides.html)
+- [**RLadies presentation Ninja** by *Alison Hill*](https://alison.rbind.io/slides/rladies-demo-slides.html)
 - [**Making slides in R Markdown** by *Alison Hill*](https://arm.rbind.io/slides/xaringan.html)
-
 
 ---
 # Online courses
@@ -480,10 +494,34 @@ class: inverse, middle, center
 * Machine learning
 * Shiny, R packages, and interactive reports
 
-[**Statistics and genomics courses by Harvard Uni on Edx**](https://www.edx.org/course?search_query=genomics+harvard+university), which are:
-* Statistics and R ,  Linear Models and Matrix Algebra, Statistical Inference, High-Dimensional Data Analysis, Introduction to Bioconductor, High-performance computing for reproducible genomics, and Case studies in functional genomics
+[**Statistics and genomics courses by Harvard Uni on Edx**](https://www.edx.org/course?search_query=genomics+harvard+university), which cover:
+* Statistics and R, linear models and matrix algebra, statistical inference, high-dimensional data analysis, introduction to Bioconductor, high-performance computing for reproducible genomics, and case studies in functional genomics
 
 [**Statistics course by Stanford Uni**](https://online.stanford.edu/courses/stats216-introduction-statistical-learning)
+
+
+---
+# Many thanks to ...
+
+.pull-left[
+
+**Davis lab**
+
+  Melissa Davis
+
+  Joseph Cursons
+
+  Dharmesh Bhuva
+
+&lt;br&gt;&lt;br&gt;
+Frederic Hollande
+
+&lt;br&gt;&lt;br&gt;
+**Winter school organising committee**
+]
+.pull-right[
+&lt;img src="./images/UniMelb_logo.jpg" width="80%" style="display: block; margin: auto;" /&gt;&lt;img src="./images/VCCC_logo.png" width="80%" style="display: block; margin: auto;" /&gt;&lt;img src="./images/WEHI_logo.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
 class: inverse, center, middle
