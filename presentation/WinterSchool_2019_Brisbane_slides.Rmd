@@ -53,7 +53,7 @@ knitr::include_graphics("./images/RLadies_meetup.png")
 # R-Ladies chapters
 - There are 158 chapters in 46 countries.
 
-- Other chapters in Australia (**Brisbane**, Sydney, Adelaide, Canberra, and Perth.
+- Other chapters in Australia: **Brisbane**, Sydney, Adelaide, Canberra, and Perth
 
 ```{r, echo=FALSE, fig.cap="https://blog.revolutionanalytics.com/2018/12/women-and-r.html", out.width = '80%', fig.align = "center"}
 knitr::include_graphics("./images/RLadies_map.png")
@@ -61,7 +61,7 @@ knitr::include_graphics("./images/RLadies_map.png")
 
 ---
 class: inverse, center, middle
-# Why generating reports in R?
+# Why generating reports in R Markdown?
 
 ---
 # Imagine a project ...
@@ -141,6 +141,8 @@ knitr::include_graphics("./images/RStudio.png")
 
 - [**RStudio cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) as well as [**many cheatsheets**](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf) by RStudio.
 
+- [**"Where to get help with your R questions?"** by *Maëlle Salmon*](https://masalmon.eu/2018/07/22/wheretogethelp/)
+
 
 ---
 # R Markdown and knitr
@@ -157,14 +159,6 @@ R Markdown (.Rmd) combines **R codes** (.R) and **documentatiuon language** (.md
 - can generate HTML, PDF or Word documents.
 
 - supports other languages, such as Python, Perl, C++, Shell scripts, etc.
-
-
----
-# R Markdown main sections
-Main sections are YAML header, markdown text, and code chunks ([R Markdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)).
-```{r, echo=FALSE, fig.align="center", out.width = '90%', fig.cap =""}
-knitr::include_graphics("./images/RMarkdown_sections.png") 
-```
 
 ---
 # Open a new R Markdown
@@ -197,63 +191,29 @@ knitr::include_graphics("./images/RMarkdown_knit2.png")
 ```
 
 ---
-# R Notebook
-
-An [**R Notebook**](https://bookdown.org/yihui/rmarkdown/notebook.html#fig:notebook-demo) is an R Markdown document with chunks that can be executed independently and interactively, with output visible immediately beneath the input.
-- **R Markdown**: executes and evaluates all code in one go. It can be very time-consuming when we have heavy processing
-- **R Notebook**: has caching behaviour; it evaluates a code chunk and save it. 
-
-"The immediacy of notebook mode makes it a good choice while authoring the R Markdown document and iterating on code. When you are ready to publish the document, you can share the notebook directly, or render it to a publication format with the Knit button."
-
----
-# R Markdown and R Notebook
-.pull-left[
-- [R Markdown](https://rmarkdown.rstudio.com)
-  + **knit** botton
-  + output: **html_document**
-
-```{r, echo=FALSE, fig.align="center", out.width = '100%', fig.cap =""}
-knitr::include_graphics("./images/RMarkdown_example.png") 
-```
-]
-
-.pull-right[
-- [R Notebook](https://bookdown.org/yihui/rmarkdown/notebook.html) 
-  + **preview** botton
-  + output: **html_notebook**
-  
-```{r, echo=FALSE, fig.align="center", out.width = '100%', fig.cap =""}
-knitr::include_graphics("./images/Rnotebook_example.png") 
-```
-]
-
----
 class: inverse
-# Creating the document
+# R Markdown has three main sections
 .pull-top[
-- YAML header
-- Text structure and format
-- Code chuncks
-- Interactive tables
-- Interactive figures
+1. YAML header
+3. Text 
+3. Code chunks
+<br>
 ]
 .pull-bottom[
-
 ```{r, echo=FALSE, fig.align="left", out.width = '100%', fig.cap =""}
 knitr::include_graphics("./images/RMarkdown_example2.png") 
 ```
-
 ]
 
----
-# How does it look when we knit?
-```{r, echo=FALSE, fig.align="center", out.width = '90%', fig.cap ="https://github.com/DavisLaboratory/NK_scoring/"}
-knitr::include_graphics("./images/Rendered_RMarkdown.png") 
-```
+--
+
+- Interactive tables
+- Interactive figures
+- [**R Markdown cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 ---
 # YAML header
-A YAML header is a set of key:value pairs at the start of the file, which starts and ends with a line of three dashes.
+A YAML header is a set of key:value pairs at the start of the file, which starts and ends with a line of three dashes (`---`).
 
 The meta data in the YAML header allows us to modify the output of the domunent; we can add/change:
 - output format
@@ -324,8 +284,6 @@ knitr::include_graphics("./images/YAML_code_show.png")
 - Add links using `[your_text](url)`; for example:
 
 `[R Markdown documnetation](https://rmarkdown.rstudio.com)` will make [R Markdown documnetation](https://rmarkdown.rstudio.com) clickable, which opens up the corresponding webpage for the documentation.
-
-- Use **single backticks** as wrappers for `in-line codes`.
 
 --
 
@@ -505,20 +463,23 @@ knitr::include_graphics("./images/singscore_workflow.png")
 # Overview of data and signatures
 
 ## Data sets
-- An example **gene expression data set** which includes gene expression values (n = 11900) for 10 samples, covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
-- TCGA breast cancer patients data 
+- An example **gene expression data set** for 10 samples (cancer cell lines), covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
+- Gene expression data for patients from [TCGA](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) data
 
 ## Signatures
 - **TGFb-EMT signature** from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf).
-
 - **Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
+
+```{r, echo=FALSE, fig.align="center", out.width = '50%', fig.cap =""}
+knitr::include_graphics("./images/EMT.jpg") 
+```
 
 ---
 class: inverse, middle, center
 # Let's look at our R Markdown report 
 
 ---
-# Resources I used for this presentation
+# Resources
 
 - [**RStudio website**](https://www.rstudio.com)
 - [**R Markdown documentation**](https://rmarkdown.rstudio.com)
@@ -579,8 +540,15 @@ class: inverse, center, middle
 # Thank you! 
 
 ---
-# Victorian Cancer Bioinformatics Symposium
-```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+.pull-left[
+# Victorian Cancer Bioinformatics Symposium 
+## Save the date: Aug 16
+## VCCC, Melbourne
+]
+.pull-right[
+```{r, echo = FALSE, out.width = "100%", fig.align = "center"}
 knitr::include_graphics("./images/VCBS_flyer.jpg")
 ```
+]
+
 
