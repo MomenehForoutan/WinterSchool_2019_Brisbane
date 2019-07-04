@@ -149,7 +149,7 @@ plotRankDensity(
 
 
 # EMT landscape 
-[Cursons et al, Combinatorial Targeting by MicroRNAs Co-ordinates Post-transcriptional Control of EMT, *Cell Systems*, 2018](https://www.cell.com/fulltext/S2405-4712(18)30237-0)
+[Cursons et al, Combinatorial Targeting by MicroRNAs Co-ordinates Post-transcriptional Control of EMT, *Cell Systems*, 2018](https://www.ncbi.nlm.nih.gov/pubmed/?term=Combinatorial+Targeting+by+MicroRNAs+Co-ordinates+Post-transcriptional+Control+of+EMT)
 ```{r EMT landscape, echo = FALSE, fig.cap = "Epithelial-Mesenchymal landscape from Cursons et al paper published in Cell Systems", out.width = '100%'}
 knitr::include_graphics("./images/Landscape.png")
 ```
@@ -216,7 +216,17 @@ projectScoreLandscape(
 You only need to pass a ggplot object to `ggplotly` to get the inteactivity. You could 
 ```{r ggplotly, fig.height = 6, fig.width = 7}
 ## p2 is a ggplot object
-ggplotly(p2)
+tcagScores <- data.frame(cbind(
+  sc1 = TCGA_EMTscore$TCGA_BrCr_Epi$TotalScore, 
+  sc2 = TCGA_EMTscore$TCGA_BrCr_Mes$TotalScore), 
+  check.names = F)
+
+p2.0 <- ggplot(data = tcagScores, aes(sc1, sc2)) +
+  geom_hex() + 
+  xlab("Epithelial")+
+  ylab("Mesenchymal")
+
+ggplotly(p2.0)
 ```
 
 We can also project the cell line scores on top of it.
@@ -232,7 +242,7 @@ newdata <- data.frame(
     'Class' = annot
   )
 
-p3 <- p2 +
+p3 <- p2.0 +
   geom_point(
     aes(text = SampleLabel, colour = Class),
     shape = 21,

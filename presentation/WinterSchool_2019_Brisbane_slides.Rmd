@@ -150,15 +150,15 @@ knitr::include_graphics("./images/RStudio.png")
 R Markdown (.Rmd) combines **R codes** (.R) and **documentatiuon language** (.md) using **knitr**.
 
 **knitr** ...
-- is an R package which works as an engine for dynamic report generation in R. 
+- is an R package which works as an **engine for dynamic report generation** in R. 
 
-- inspired by Sweave (R code + LaTeX)
+- inspired by **Sweave** (R code + LaTeX)
 
-- helps us to integrate R codes into other documents (e.g. Markdown, LaTeX, HTML, etc).
+- helps us to integrate R codes into other **documents** (e.g. Markdown, LaTeX, HTML, etc).
 
 - can generate HTML, PDF or Word documents.
 
-- supports other languages, such as Python, Perl, C++, Shell scripts, etc.
+- supports **other languages**, such as Python, Perl, C++, Shell scripts, etc.
 
 ---
 # Open a new R Markdown
@@ -209,6 +209,8 @@ knitr::include_graphics("./images/RMarkdown_example2.png")
 
 - Interactive tables
 - Interactive figures
+--
+
 - [**R Markdown cheatsheet**](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 ---
@@ -462,17 +464,16 @@ knitr::include_graphics("./images/singscore_workflow.png")
 ---
 # Overview of data and signatures
 
-## Data sets
-- An example **gene expression data set** for 10 samples (cancer cell lines), covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
-- Gene expression data for patients from [TCGA](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) data
-
-## Signatures
-- **TGFb-EMT signature** from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf).
-- **Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
-
 ```{r, echo=FALSE, fig.align="center", out.width = '50%', fig.cap =""}
 knitr::include_graphics("./images/EMT.jpg") 
 ```
+### Data sets
+- An example **gene expression data set** for 10 samples (cancer cell lines), covering two conditions (Control and TGFb-treated). This data is a subset of an integrated data set from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
+- Gene expression data for patients from [TCGA](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) data
+
+### Signatures
+- **TGFb-EMT signature** from [Foroutan *et al*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf).
+- **Epithelial** and **Mesenchymal** signatures from [Tan *et al*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
 
 ---
 class: inverse, middle, center
@@ -487,6 +488,14 @@ class: inverse, middle, center
 - [**Baby one more time - Reproducibility in R and when to pull in the big guns** by *Lavinia Gordon*](https://mrslaviniag.github.io/xaringan_presentations/rladies_presentation_22_May_2019.html)
 - [**RLadies presentation Ninja** by *Alison Hill*](https://alison.rbind.io/slides/rladies-demo-slides.html)
 - [**Making slides in R Markdown** by *Alison Hill*](https://arm.rbind.io/slides/xaringan.html)
+
+
+- [Using singscore to predict mutations in acute myeloid leukemia from transcriptomic signatures, *f1000 Research*, 2019](https://f1000research.com/articles/8-776)
+- [Single-sample scoring of Molecular phenotypes, *BMC Bioinformatics*, 2018.](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2435-4)
+- [Combinatorial Targeting by MicroRNAs Co-ordinates Post-transcriptional Control of EMT, *Cell Systems*, 2018](https://www.ncbi.nlm.nih.gov/pubmed/?term=Combinatorial+Targeting+by+MicroRNAs+Co-ordinates+Post-transcriptional+Control+of+EMT)
+- [A Transcriptional Program for Detecting TGFb-Induced EMT in Cancer, *Molecular Cancer Research, 2017*](http://mcr.aacrjournals.org/content/molcanres/15/5/619.full.pdf). 
+- [*Epithelial-mesenchymal transition spectrum quantification and its efficacy in deciphering survival and drug responses of cancer patients.*](https://www.ncbi.nlm.nih.gov/pubmed/25214461).
+- [TCGA ](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) 
 
 ---
 # Online courses
@@ -520,6 +529,8 @@ class: inverse, middle, center
   Joseph Cursons
 
   Dharmesh Bhuva
+  
+  Ruqian Lyu
 
 <br><br>
 Frederic Hollande
@@ -540,13 +551,14 @@ class: inverse, center, middle
 # Thank you! 
 
 ---
+class: inverse
 .pull-left[
 # Victorian Cancer Bioinformatics Symposium 
 ## Save the date: Aug 16
 ## VCCC, Melbourne
 ]
 .pull-right[
-```{r, echo = FALSE, out.width = "100%", fig.align = "center"}
+```{r, echo = FALSE, out.width = "98%", fig.align = "center"}
 knitr::include_graphics("./images/VCBS_flyer.jpg")
 ```
 ]
