@@ -191,7 +191,7 @@ sigScore_mes <-
 
 Here, I load the epithelial and mesenchymal scores for the TCGA breast cancer data. I have already downloaded the TCGA data, calculated the RPKM values, and scored samples. To see how to do all these on the TCGA data, see the workflow paper by [Bhuva *et al*](https://f1000research.com/articles/8-776).
 ```{r generate overlaid landscape plot, fig.height = 6, fig.width = 7}
-TCGA_EMTscore <- readRDS('../data/TCGA_BrCr_EMT_score.RDS')
+TCGA_EMTscore <- readRDS('../data/TCGA_BrCr_EMT_score_rmIDs.RDS')
 
 p2 <- plotScoreLandscape(
   scoredf1 = TCGA_EMTscore$TCGA_BrCr_Epi,
